@@ -1,26 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
+    <h1>Javscript Basics</h1>
+    <h2 id="addition"></h2>
+    <h3 id="time"></h3>
+    <h4 id="day"></h4>
+    <script>
+      console.log("Hello world");
+      let a = 5;
+      let b = 10;
+      let c = a + b;
 
-<h1>Javscript Basics</h1>
-<h2 id="addition"></h2>
+      document.getElementById("addition").innerHTML = c;
 
+      var ctime = new Date();
+      var hrs = ctime.getHours();
+      var day = ctime.getDay();
+      if (hrs < 12) {
+        document.getElementById("time").innerHTML =
+          "Good Morning! Have a productive day";
+      } else {
+        document.getElementById("time").innerHTML =
+          "Ops! You have started late";
+      }
 
-<script>
-console.log('Hello world');
-let a = 5;
-let b = 10;
-let c = a+b;
+      const courses = ["Git Basics", "HTML&CSS", "Javascript", "TS"];
+      var i = 0;
 
-document.getElementById('addition').innerHTML = c;
+      for (; courses[i]; ) {
+        console.log(courses[i]);
+        i++;
+      }
+      i = 0;
+      while (courses[i]) {
+        console.log(courses[i]);
+        i++;
+      }
 
-</script>
+      function getDayName(){
+      switch (day) {
+        case 0:
+          return "Sunday! Have Fun";
+        case 1:
+          return "Monday!";
+        case 2:
+          return "Tuesday";
+          case 3:
+return "Wed";
+case 4:
+return "Thursday";
 
-</body>
+case 5:
+return "Friday";      
+case 6:
+return "Saturday";
+        }
+    }
+    document.getElementById("day").innerHTML =getDayName();
+    </script>
+  </body>
 </html>
