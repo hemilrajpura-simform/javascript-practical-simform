@@ -4,65 +4,161 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
+    <style>
+   
+      </style>
   </head>
   <body>
-    <h1>Javscript Basics</h1>
-    <h2 id="addition"></h2>
-    <h3 id="time"></h3>
-    <h4 id="day"></h4>
-    <script>
-      console.log("Hello world");
-      let a = 5;
-      let b = 10;
-      let c = a + b;
+    <div class="container">
+      <div class="display">
+        <input type="text" placeholder="0" class="screen" />
+      </div>
+      <div class="buttons">
 
-      document.getElementById("addition").innerHTML = c;
+        <div class="row">
+          <a class="diff">DEG</a>
+          <a class="diff">F-E</a>
+        </div>
+        <div class="row">
+          <a class="diff">MC</a>
+          <a class="diff">MR</a>
+          <a class="diff">M+</a>
+          <a class="diff">M-</a>
+          <a class="diff">MS</a>
+        </div>
+        <div class="row">
+          <a class="diff">Trigonometry</a>
+          <a class="diff">Function</a>
+        </div>
 
-      var ctime = new Date();
-      var hrs = ctime.getHours();
-      var day = ctime.getDay();
-      if (hrs < 12) {
-        document.getElementById("time").innerHTML =
-          "Good Morning! Have a productive day";
-      } else {
-        document.getElementById("time").innerHTML =
-          "Ops! You have started late";
-      }
 
-      const courses = ["Git Basics", "HTML&CSS", "Javascript", "TS"];
-      var i = 0;
+        <div class="row">
+          <button class="btn">2^nd</button>
+          <button onclick="screen.value +='3.14159265359'">π</button>
+          <button onclick="screen.value +='2.71828182846'">e</button>
+          <button onclick="screen.value=''">C</button>
+          <button onclick="backspace()" style="font-weight: bold;">
+            <
+          </button>
+        </div>
 
-      for (; courses[i]; ) {
-        console.log(courses[i]);
-        i++;
-      }
-      i = 0;
-      while (courses[i]) {
-        console.log(courses[i]);
-        i++;
-      }
+        <div class="row">
+          <button onclick="screen.value = Math.pow(screen.value,2)">x^2</button>
+          <button onclick="oneDivide()">1/x</button>
+          <button onclick="positive()">|x|</button>
+          <button onclick="exp()">exp</button>
+          <button> mod</button>
+        </div>
+        <div class="row">
+          <button>2modx</button>
+          <button class="btn">(</button>
+          <button class="btn">)</button>
+          <button onclick="fact()">n!</button>
+          <button class="btn">÷</button>
+        </div>
 
-      function getDayName(){
-      switch (day) {
-        case 0:
-          return "Sunday! Have Fun";
-        case 1:
-          return "Monday!";
-        case 2:
-          return "Tuesday";
-          case 3:
-return "Wed";
-case 4:
-return "Thursday";
+        <div class="row">
+          <button onclick="">x^y</button>
+          <button class="btn">7</button>
+          <button class="btn">8</button>
+          <button class="btn">9</button>
+          <button class="btn">x</button>
+        </div>
 
-case 5:
-return "Friday";      
-case 6:
-return "Saturday";
-        }
-    }
-    document.getElementById("day").innerHTML =getDayName();
-    </script>
+        <div class="row">
+          <button>10^x</button>
+          <button class="btn">4</button>
+          <button class="btn">5</button>
+          <button class="btn">6</button>
+          <button class="btn">-</button>
+        </div>
+
+        <div class="row">
+          <button onclick="log()">log</button>
+          <button class="btn">1</button>
+          <button class="btn">2</button>
+          <button class="btn">3</button>
+          <button class="btn">+</button>
+        </div>
+        <div class="row">
+          <button>In</button>
+          <button class="btn">+/-</button>
+          <button class="btn">0</button>
+          <button class="btn">.</button>
+          <button
+            onclick="screen.value='=' + eval(screen.value )" 
+          style="background-color: rgba(224, 224, 224, 0.199); font-weight: bold  ;">
+          =
+          </button>
+        </div>
+      </div>
+    </div>
+
+<script>
+
+var screen = document.querySelector('.screen');
+var btn =  document.querySelectorAll('.btn');
+
+for( item of btn ){
+  item.addEventListener('click', (e)=>{
+  btntxt = e.target.innerText;
+
+  if(btntxt=='x'){
+    btntxt='*';
+  }
+  else if(btntxt=='÷'){
+    btntxt='/';
+  }
+  else if(btntxt=='C'){
+    //screen.value = ' ';
+  }
+
+
+  screen.value += btntxt;   
+  if(btntxt=='C'){
+    screen.value = ' ';
+  }
+  });
+}
+
+function positive(){
+  screen.value = 0-screen.value; 
+}
+
+function backspace(){
+  screen.value = screen.value.substr(0,screen.value.length-1);
+}
+
+function oneDivide(){
+  screen.value = (1/screen.value);
+}
+function fact(){
+   
+  var i,num,f;
+  f=1;
+  num = screen.value;
+  for(i=1;i<=num;i++){
+    f=f*i;
+  }
+  i = i-1;
+  screen.value = f;
+
+}
+
+function exp(){
+  screen.value =  Math.exp(screen.value);
+}
+
+function log(){
+  screen.value =  Math.log(screen.value);
+}
+
+
+  </script>
+
+
   </body>
 </html>
