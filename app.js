@@ -1,6 +1,5 @@
 var memoryStore = [];
 
-
 function mc() {
   memoryStore = [];
   document.getElementById("memory-operation").innerHTML = 
@@ -13,8 +12,8 @@ function ms() {
   console.log(memoryStore);
   document.getElementById("memory-operation").innerHTML =
     (memoryStore.length == 0 ? "No Stored Value Available" : memoryStore[0]);
-
 }
+
 function mr() {
   console.log(memoryStore[0]);
   scrn.value += memoryStore[0];
@@ -97,6 +96,7 @@ function trigo() {
     scrn.value = Math.tan(scrn.value);
     document.getElementById("Trigonometry").selectedIndex = 0;
   }
+
 }
 
 
