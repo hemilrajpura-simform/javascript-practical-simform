@@ -13,7 +13,8 @@ body {
   padding: 10px;
   border-radius: 7px;
   box-shadow: 0px 0px 20px #cbced1;
-  border: 1px solid rgba(0, 0, 0, 0.151);
+  outline: 2px double rgba(0, 0, 0, 0.151);
+    border-bottom: 6px solid rgb(255 177 37);
 }
 .display input {
   width: 99%;
