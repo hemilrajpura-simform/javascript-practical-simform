@@ -23,6 +23,7 @@
           class="screen"
           id="scrn"
           name="scrn"
+          maxlength="15"
           onkeypress="return checkAlpha(event)"
         />
       </div>
@@ -68,7 +69,7 @@
         </div>
 
         <div class="row">
-          <button id="x2" onclick="pow()">x2</button>
+          <button id="x2" onclick="pow()">x^2</button>
           <button onclick="oneDivide()">1/x</button>
           <button onclick="scrn.value = 0 - scrn.value">|x|</button>
           <button onclick="exp()">exp</button>

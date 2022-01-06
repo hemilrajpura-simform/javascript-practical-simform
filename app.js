@@ -2,8 +2,6 @@ var memoryStore = [];
 var secondOperations = true;
 var calcModeBtn = true;
 
-
-
 function calcModeButton() {
   if (calcModeBtn) {
     document.getElementById("calcMode").innerText = "DEG";
@@ -14,9 +12,6 @@ function calcModeButton() {
     calcModeBtn = !calcModeBtn;
   }
 }
-
-
-
 
 function secondButton() {
 
@@ -44,12 +39,9 @@ function secondButton() {
     secondOperations = !secondOperations;
 
   }
-
-
 }
 
 function memoryOperations(props) {
-
   switch (props) {
     case "mc":
       memoryStore = [];
@@ -75,8 +67,6 @@ function memoryOperations(props) {
     (memoryStore.length == 0 ? "No Stored Value Available" : memoryStore[0]);
 }
 
-
-
 function pow() {
 
   if (secondOperations) {
@@ -85,15 +75,7 @@ function pow() {
   else {
     scrn.value = Math.pow(scrn.value, 3)
   }
-
-
 }
-
-
-
-
-
-
 
 function checkAlpha(e) {
   var x = e.which || e.keycode;
@@ -103,11 +85,9 @@ function checkAlpha(e) {
     return false;
 }
 
-
 function backspace() {
   scrn.value = scrn.value.substr(0, scrn.value.length - 1);
 }
-
 
 function sign() {
   scrn.value = Math.sign(scrn.value);
@@ -119,7 +99,7 @@ function oneDivide() {
 
 function tenpower() {
   if (secondOperations) {
-    scrn.value = Math.pow(10,scrn.value);
+    scrn.value = Math.pow(10, scrn.value);
   }
   else {
     scrn.value = 2 ** (scrn.value);
@@ -130,7 +110,6 @@ function FE() {
   scrn.value = displayValue.toExponential();
 }
 
-
 function In() {
   if (secondOperations) {
     scrn.value = Math.log(scrn.value);
@@ -139,8 +118,6 @@ function In() {
     scrn.value = (2.71828182846) ** (scrn.value);
   }
 }
-
-
 
 function fact() {
 
@@ -187,7 +164,6 @@ function trigo() {
         scrn.value = (scrn.value) * (Math.PI / 180);
         scrn.value = Math.cos(scrn.value);
       }
-
       break;
 
     case "3":
