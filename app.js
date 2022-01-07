@@ -109,6 +109,10 @@ function FE() {
   displayValue = Number(scrn.value);
   scrn.value = displayValue.toExponential();
 }
+function exp() {
+  scrn.value = Math.exp(scrn.value);
+}
+
 
 function In() {
   if (secondOperations) {
