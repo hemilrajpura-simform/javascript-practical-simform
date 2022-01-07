@@ -113,7 +113,6 @@ function exp() {
   scrn.value = Math.exp(scrn.value);
 }
 
-
 function In() {
   if (secondOperations) {
     scrn.value = Math.log(scrn.value);
